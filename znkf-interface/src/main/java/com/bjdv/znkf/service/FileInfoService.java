@@ -1,6 +1,5 @@
 package com.bjdv.znkf.service;
 
-import com.bjdv.znkf.pojo.FileInfo;
 import com.bjdv.znkf.pojo.Upload;
 import org.springframework.web.multipart.MultipartFile;
 

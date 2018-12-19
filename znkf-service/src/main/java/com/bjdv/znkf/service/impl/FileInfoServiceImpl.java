@@ -4,7 +4,6 @@ package com.bjdv.znkf.service.impl;
 import com.bjdv.znfk.utils.FileUtils;
 import com.bjdv.znfk.utils.TimeUilt;
 import com.bjdv.znkf.dao.FileInfoRepository;
-import com.bjdv.znkf.pojo.FileInfo;
 import com.bjdv.znkf.pojo.Upload;
 import com.bjdv.znkf.service.FileInfoService;
 import lombok.extern.slf4j.Slf4j;
@@ -76,8 +75,8 @@ public class FileInfoServiceImpl implements FileInfoService {
             u.setDelDate( null );
             u.setDelState( "1" );
             u.setExtensionName( suffixName );
-            Upload upload = fileInfoRepository.save( u );
-            list.add( upload );
+            //Upload upload = fileInfoRepository.save( u );
+           // list.add( upload );
         } catch (IOException e) {
             e.printStackTrace();
             return null;

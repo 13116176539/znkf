@@ -10,6 +10,7 @@ package com.bjdv.znkf.pojo;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -19,20 +20,30 @@ import java.io.Serializable;
  * @create 2018/9/10
  * @since 1.0.0
  */
+@Entity
+@Table(name = "Upload")
 @Data
 public class Upload implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
+
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
     private String id;
     //文件路径
+    @Column(name = "url")
     private String url;
     //访客id
-    private int visitorId;
+    @Column(name = "visitor_Id")
+    private Integer visitorId;
     //坐席id
-    private int agentId;
+    @Column(name = "agent_id")
+    private Integer agentId;
     //标识
+    @Column(name = "tag")
     private String tag;
     //文件名称
+    @Column(name = "file_name")
     private String fileName;
     /**
      * 文件后缀名
