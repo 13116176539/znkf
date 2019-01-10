@@ -99,7 +99,7 @@ public class UUIDUtil {
      *
      * @return
      */
-    private static String getUUIDStr() {
+    public static String getUUIDStr() {
         UUID uuid = UUID.randomUUID();
         BigInteger pt1 = unsigned2BigInt( uuid.getMostSignificantBits() );
         BigInteger pt2 = unsigned2BigInt( uuid.getLeastSignificantBits() );
@@ -121,4 +121,7 @@ public class UUIDUtil {
     }
 
 
+    public static void main(String[] args) {
+        System.out.println( getUUIDStr() + ".html" );
+    }
 }

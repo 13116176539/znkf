@@ -1,7 +1,7 @@
 package com.bjdv.znkf.service;
 
-import com.bjdv.znkf.pojo.Upload;
-import org.springframework.web.multipart.MultipartFile;
+import com.bjdv.znkf.pojo.UploadDTO;
+import com.bjdv.znkf.pojo.Upload_demo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,16 +17,17 @@ import java.util.List;
 public interface FileInfoService {
 
 
-   /**
-    * 2.13 文件上传
-    *
-    * @return
-    */
-   List<Upload> fileUpload(MultipartFile file,int visitorId, int agentId, String tag);
+    /**
+     * 2.13 文件上传
+     * <p>
+     * ,int visitorId, int agentId, String tag
+     *
+     * @return
+     */
+    List <Upload_demo> fileUpload(Upload_demo uploadDTO);
 
 
-
-   boolean downloadFile(String fileName, HttpServletRequest request, HttpServletResponse response);
+    Upload_demo downloadFile(String fileName);
 
 
 }

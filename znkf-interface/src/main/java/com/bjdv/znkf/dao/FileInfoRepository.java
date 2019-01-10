@@ -1,10 +1,10 @@
 package com.bjdv.znkf.dao;
 
-import com.bjdv.znkf.pojo.Person;
-import com.bjdv.znkf.pojo.Upload;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import com.bjdv.znkf.pojo.Upload_demo;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * 〈文件上传〉
@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public interface FileInfoRepository extends JpaRepository <Upload, Long>, JpaSpecificationExecutor <Upload> {
+public interface FileInfoRepository extends MongoRepository<Upload_demo, String> {
 
+    Upload_demo findByFileNameOrderByDateDesc(String fileName);
 }

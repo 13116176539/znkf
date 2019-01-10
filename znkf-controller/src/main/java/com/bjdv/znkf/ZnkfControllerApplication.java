@@ -18,5 +18,4 @@ public class ZnkfControllerApplication {
     public static void main(String[] args) {
         SpringApplication.run( ZnkfControllerApplication.class, args );
     }
-
 }

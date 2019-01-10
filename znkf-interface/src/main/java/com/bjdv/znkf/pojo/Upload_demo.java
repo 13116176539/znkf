@@ -8,42 +8,35 @@ package com.bjdv.znkf.pojo;
  */
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * 〈文件路径地址〉
+ * 〈文件路径地址--存入mongodb中〉
  *
  * @author hanxulei
  * @create 2018/9/10
  * @since 1.0.0
  */
-@Entity
-@Table(name = "Upload")
 @Data
-public class Upload implements Serializable {
+public class Upload_demo implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, unique = true)
+    @Id
     private String id;
     //文件路径
-    @Column(name = "url")
     private String url;
     //访客id
-    @Column(name = "visitor_Id")
     private Integer visitorId;
     //坐席id
-    @Column(name = "agent_id")
     private Integer agentId;
     //标识
-    @Column(name = "tag")
     private String tag;
     //文件名称
-    @Column(name = "file_name")
     private String fileName;
     /**
      * 文件后缀名

@@ -5,16 +5,33 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-    <p>Get your greeting <a href="/....">here</a></p>
+<p>Get your greeting <a href="/....">here</a></p>
 
+<h1>文件上传</h1>
+<form id="hanxulei" action="/upload_file" method="POST" enctype="multipart/form-data">
+    文件：<input type="file" name="file"/>
+    <input type="submit" value="上传"/>
+</form>
+<h1>文件下载</h1>
+<form id="222" action="/download" method="POST">
+    <input id="xiazai" type="submit" value="下载"/>
+</form>
+<a href="/download"/>下载</a>
 
-
-    <form id="hanxulei" action="/upload_file" method="POST" enctype="multipart/form-data">
-        文件：<input type="file" name="uploadFile"/>
-            <input type="submit" value="上传"/>
-    </form>
-
-    
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $('xiazai').on('click',function(){
+        $.ajax({
+            url:"192.168.50.149/download",
+            type:"POST",
+            data:"db_base.sql",
+            contentType:"application/json",  //缺失会出现URL编码，无法转成json对象
+            success:function(){
+                alert("成功");
+            }
+        });
+    });
+</script>
 </body>
 
 <!--<script>
